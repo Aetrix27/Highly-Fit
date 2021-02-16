@@ -1,3 +1,55 @@
-.text-capitalize.text-black-50 {
+.img-fluid{
+    height: auto;
+    width: auto;
+    max-height: 170px;
+    max-width: 150px;
 }
 
+.jumbotron{
+    background-color: rgb(3, 3, 3);
+
+    min-height: 500px;
+}
+
+.navbar-1{
+    background-color: rgb(255, 255, 255);
+}
+
+html, body {
+    height: 100%;
+  }
+  
+  #wrap {
+    min-height: 70%;
+  }
+  
+  #main {
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+  }
+  
+  .footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+  } 
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.about-us{
+    background-color: white;
+    color: black;
+}
+
+.footer{
+    background-color: black;
+}
+
+.btn-jumbo{
+  background-color: white;
+  color: black;
+}

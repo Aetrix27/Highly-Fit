@@ -34,13 +34,17 @@ app = Flask(__name__)
 def home():
         welcome = 'welcome to the '
 
-
         context = {
             'welcome': welcome
         }
         
-
         return render_template('index.html', **context) 
+
+
+@app.route('/model')
+def model():
+        
+        return render_template('model.html') 
 
 @app.route('/workout')
 def workout():

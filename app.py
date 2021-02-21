@@ -1,7 +1,8 @@
 import jinja2
 import os
-import pymongo
-
+from pymongo import MongoClient
+import json
+from bson import json_util
 from pprint import PrettyPrinter
 from flask import Flask, request, render_template
 from flask_pymongo import PyMongo
@@ -9,6 +10,12 @@ from flask_pymongo import PyMongo
 ################################################################################
 ## SETUP
 ################################################################################
+
+cluster = MongoClient('mongodb+srv://johndoe:Hello123@cluster0.h18wa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+
+db = cluster['highlyfit']
+collection = db['workouts']
+
 
 app = Flask(__name__)
 
@@ -42,23 +49,32 @@ def home():
 
         return render_template('index.html', **context) 
 
-@app.route('/workout')
-def workout():
-        workout = 'abs'
-        time_length = 200
-        difficulty = 'beginner'
-        equipment = 'weights'
-        description = 'Do 3 reps'
+@app.route('/workout', methods=['GET'])
+def get_workouts():
+    all_workouts = list(collection.find({}))
+    return json.dumps(all_workouts, default = json_util.default)
+# return render_template('workout.html', **context) 
 
-        context = {
-            'workout' : workout,
-            'time_length': time_length,
-            'difficulty': difficulty,
-            'equipment': equipment,
-            'description': description
+@app.route('/createworkout', methods=["GET", "POST"])
+def create():
+
+    if request.method == 'POST':
+        # TODO: Get the new plant's name, variety, photo, & date planted, and 
+        # store them in the object below.
+        new_workout = {
+            'workout_name': request.form.get('workout_name'),
         }
+        # TODO: Make an `insert_one` database call to insert the object into the
+        # database's `plants` collection, and get its inserted id. Pass the 
+        # inserted id into the redirect call below.
+        db.session.add('new_workout')
+        db.session.commit()
 
-        return render_template('workout.html', **context) 
+        return redirect(url_for('detail', workout_id=new_workout.id))
+
+    else:
+        return render_template('createworkout.html')
+
        
 
 if __name__ == "__main__":

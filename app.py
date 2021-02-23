@@ -70,6 +70,35 @@ def detail(workout_id):
         'workout': workout_to_show
     }
     return render_template('detail.html', **context)
+
+@app.route('/edit/<workout_id>', methods=["GET", "POST"])
+def edit(workout_id):
+    if request.method = "POST":
+        workout = request.form.get('workout_name')
+
+        mongo.db.workouts_data.update_one({
+            '_id': ObjectId(workout_id),
+            
+        },
+        {
+            '$set': {
+                '_id': ObjectId(workout_id)
+                'workout_name': workout
+            }
+        })
+
+        return redirect(url_for('detail', workout_id=workout_id))
+    else:
+
+        workout_to_show=mongo.db.workouts_data.find_one({
+            '_id': ObjectId(workout_id)
+        })
+
+        context = {
+            'workout': workout_to_show
+        }
+
+        return render_template('edit.html', **context)
        
 
 if __name__ == "__main__":

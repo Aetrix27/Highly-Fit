@@ -4,77 +4,72 @@ from pymongo import MongoClient
 import json
 from bson import json_util
 from pprint import PrettyPrinter
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+
 
 ################################################################################
 ## SETUP
 ################################################################################
 
-cluster = MongoClient('mongodb+srv://johndoe:Hello123@cluster0.h18wa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
-
-db = cluster['highlyfit']
-collection = db['workouts']
 
 
 app = Flask(__name__)
 
-# host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/highly-fit') + "?retryWrites=false"
-# app.config["MONGO_URI"] = host
-# mongo = PyMongo(app)
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/workoutdatabase') + "?retryWrites=false"
+app.config["MONGO_URI"] = host
+mongo = PyMongo(app)
 
-
-# my_loader = jinja2.ChoiceLoader([
-#     app.jinja_loader,
-#     jinja2.FileSystemLoader('data'),
-# ])
-# app.jinja_loader = my_loader
-# mongo = PyMongo(app)
-
-# pp = PrettyPrinter(indent=4)
 
 ################################################################################
 ## ROUTES
 ################################################################################
 
-@app.route('/')
-def home():
-        welcome = 'welcome to the '
+@app.route('/model', methods=['GET'])
+def show_model():
+    return render_template('model.html')
 
-
-        context = {
-            'welcome': welcome
-        }
-        
-
-        return render_template('index.html', **context) 
-
-@app.route('/workout', methods=['GET'])
+@app.route('/workouts')
 def get_workouts():
-    all_workouts = list(collection.find({}))
-    return json.dumps(all_workouts, default = json_util.default)
-# return render_template('workout.html', **context) 
+    workouts_data = mongo.db.workouts_data.find({})
+    context = {
+        'workouts': workouts_data
+    }
+    
+
+    
+    return render_template('workout.html', **context) 
+
 
 @app.route('/createworkout', methods=["GET", "POST"])
 def create():
+    workout = request.form.get('workout_name')
 
     if request.method == 'POST':
-        # TODO: Get the new plant's name, variety, photo, & date planted, and 
-        # store them in the object below.
+    
         new_workout = {
-            'workout_name': request.form.get('workout_name'),
+            'workout_name' : workout
         }
-        # TODO: Make an `insert_one` database call to insert the object into the
-        # database's `plants` collection, and get its inserted id. Pass the 
-        # inserted id into the redirect call below.
-        db.session.add('new_workout')
-        db.session.commit()
+       
+        result=mongo.db.workouts_data.insert_one(new_workout)
+        inserted_id = result.inserted_id
 
-        return redirect(url_for('detail', workout_id=new_workout.id))
+        return redirect(url_for('detail', workout_id=inserted_id))
 
     else:
         return render_template('createworkout.html')
 
+@app.route('/workout/<workout_id>')
+def detail(workout_id):
+    workout_to_show = mongo.db.workouts_data.find_one({
+        '_id': ObjectId(workout_id)
+    })
+    context = {
+        'workout_id': ObjectId(workout_id),
+        'workout': workout_to_show
+    }
+    return render_template('detail.html', **context)
        
 
 if __name__ == "__main__":

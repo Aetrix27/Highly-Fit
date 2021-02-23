@@ -7,7 +7,7 @@
 
 .jumbotron{
     background-color: rgb(3, 3, 3);
-
+    background-image: url(/Screen\ Shot\ 2021-02-23\ at\ 3.03.01\ PM.png);
     min-height: 500px;
 }
 
@@ -46,10 +46,11 @@ body{
 }
 
 .footer{
-    background-color: black;
+    background-color:;
 }
 
-.btn-jumbo{
-  background-color: white;
-  color: black;
+.btn{
+  background-color: grey;
+  margin-left: 12%;
+  margin-top: 11%;
 }

@@ -25,7 +25,10 @@ mongo = PyMongo(app)
 ################################################################################
 ## ROUTES
 ################################################################################
-
+@app.route('/', methods=['GET'])
+def Launch_page():
+    return render_template('index.html')
+    
 @app.route('/model', methods=['GET'])
 def show_model():
     return render_template('model.html')
@@ -73,7 +76,7 @@ def detail(workout_id):
 
 @app.route('/edit/<workout_id>', methods=["GET", "POST"])
 def edit(workout_id):
-    if request.method = "POST":
+    if request.method == "POST":
         workout = request.form.get('workout_name')
 
         mongo.db.workouts_data.update_one({
@@ -82,7 +85,7 @@ def edit(workout_id):
         },
         {
             '$set': {
-                '_id': ObjectId(workout_id)
+                '_id': ObjectId(workout_id),
                 'workout_name': workout
             }
         })

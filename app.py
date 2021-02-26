@@ -73,7 +73,7 @@ def detail(workout_id):
 
 @app.route('/edit/<workout_id>', methods=["GET", "POST"])
 def edit(workout_id):
-    if request.method = "POST":
+    if request.method == "POST":
         workout = request.form.get('workout_name')
 
         mongo.db.workouts_data.update_one({
@@ -82,7 +82,7 @@ def edit(workout_id):
         },
         {
             '$set': {
-                '_id': ObjectId(workout_id)
+                '_id': ObjectId(workout_id),
                 'workout_name': workout
             }
         })
@@ -99,6 +99,14 @@ def edit(workout_id):
         }
 
         return render_template('edit.html', **context)
+    
+@app.route('/delete/<workout_id>', methods=['POST'])
+def delete(workout_id):
+    mongo.db.workouts_data.delete_one({
+        '_id': ObjectId(workout_id)
+    })
+    
+    return redirect(url_for('detail', workout_id=workout_id))
        
 
 if __name__ == "__main__":

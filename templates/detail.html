@@ -23,9 +23,10 @@
 
             </fieldset>
         </form> -->
+        <a class="nav" href="/edit/{{ workout._id }}">Edit Workout</a><br><br>
 
-        <!-- <form action="/delete/123456" method='POST' id="delete-form" onsubmit="return confirm_delete()">
-            <input type="submit" class="nav" onclick="delete_modal()" value="Delete Plant">
-        </form> -->
+        <form action="/delete/{{ workout._id }}" method='POST' id="delete-form" onsubmit="return confirm_delete()">
+            <input type="submit" class="nav" onclick="delete_modal()" value="Delete Workout">
+        </form>
 </main>
 {% endblock %}

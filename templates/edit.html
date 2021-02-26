@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<main>
+    <h1>Edit Workout</h1>
+
+    <form method='POST'>
+        <fieldset>
+            <legend>Edit any info you need to for this workout:</legend>
+
+            <label>
+                Workout name:
+                <input type="text" name="workout_name" value="{{ workout.workout_name }}">
+            </label>
+            
+            <input type="submit" class="submit" value=" Edit">
+
+        </fieldset>
+        <fieldset>
+            <!-- <legend>Edit any info you need to for this workout:</legend>
+
+            <label>
+                Workout name:
+                <input type="text" name="workout_name" value="{{ workout.workout_name }}">
+            </label>
+            
+            <input type="submit" class="submit" value=" Edit"> -->
+
+            <!-- description -->
+
+            <label>
+                Workout description:
+                <input type="text" name="workout_name" value="{{ workout.workout_name }}">
+            </label>
+            
+            <input type="submit" class="submit" value=" Edit">
+
+        </fieldset>
+    </form>
+</main>
+
+{% endblock content %}
+    

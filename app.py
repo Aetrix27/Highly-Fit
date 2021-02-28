@@ -40,7 +40,6 @@ def get_workouts():
         'workouts': workouts_data
     }
     
-
     
     return render_template('workout.html', **context) 
 

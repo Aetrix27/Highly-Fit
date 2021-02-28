@@ -37,7 +37,6 @@ def get_workouts():
         'workouts': workouts_data
     }
     
-
     
     return render_template('workout.html', **context) 
 
@@ -73,7 +72,7 @@ def detail(workout_id):
 
 @app.route('/edit/<workout_id>', methods=["GET", "POST"])
 def edit(workout_id):
-    if request.method = "POST":
+    if request.method == "POST":
         workout = request.form.get('workout_name')
 
         mongo.db.workouts_data.update_one({
@@ -82,7 +81,7 @@ def edit(workout_id):
         },
         {
             '$set': {
-                '_id': ObjectId(workout_id)
+                '_id': ObjectId(workout_id),
                 'workout_name': workout
             }
         })

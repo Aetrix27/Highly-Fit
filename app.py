@@ -25,6 +25,9 @@ mongo = PyMongo(app)
 ################################################################################
 ## ROUTES
 ################################################################################
+@app.route('/')
+def homepage():
+    return render_template('index.html')
 
 @app.route('/model', methods=['GET'])
 def show_model():

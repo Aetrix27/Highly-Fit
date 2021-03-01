@@ -26,12 +26,10 @@ mongo = PyMongo(app)
 ## ROUTES
 ################################################################################
 
-=======
 @app.route('/', methods=['GET'])
 def Launch_page():
     return render_template('index.html')
     
->>>>>>> develop
 @app.route('/model', methods=['GET'])
 def show_model():
     return render_template('model.html')

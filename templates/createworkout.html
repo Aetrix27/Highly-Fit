@@ -3,19 +3,46 @@
 
 
 <main>
-    <h1>New Workout</h1>
+    <h1>Add a new workout</h1>
 
     <form method='POST'>
         <fieldset>
-            <legend>Please fill out your plant's info:</legend>
+            <legend>Please fill out the form below to add your new workout</legend>
 
             <label>
-                Plant's name:
+                Workout's name:
                 <input type="text" name="workout_name">
             </label>
-            
-            <input type="submit" class="submit" value="Submit!">
         </fieldset>
+
+        <fieldset>
+            <label>
+            Workout Description:
+                <input type="text" name="workout_description">
+            </label>
+            
+        </fieldset>
+
+        <fieldset>
+            <label>Choose a body part:</label>
+                <select id="body_part" name="body_part">
+                <option value="Arms">Arms</option>
+                <option value="Legs">Legs</option>
+                <option value="Abs">Abs</option>
+                <option value="Chest">Chest</option>
+                <option value="Back">Back</option>
+                </select>
+        </fieldset>
+
+        <fieldset>
+            <label>Choose a difficulty level:</label>
+                <select id="workout_diffuclty" name="workout_diffuclty">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Pro">Pro</option>
+                </select>
+        </fieldset>
+        <input type="submit" class="submit" value="Submit!">
     </form>
 </main>
 

@@ -25,10 +25,13 @@ mongo = PyMongo(app)
 ################################################################################
 ## ROUTES
 ################################################################################
-@app.route('/')
-def homepage():
-    return render_template('index.html')
 
+=======
+@app.route('/', methods=['GET'])
+def Launch_page():
+    return render_template('index.html')
+    
+>>>>>>> develop
 @app.route('/model', methods=['GET'])
 def show_model():
     return render_template('model.html')
@@ -47,11 +50,19 @@ def get_workouts():
 @app.route('/createworkout', methods=["GET", "POST"])
 def create():
     workout = request.form.get('workout_name')
+    workout_description = request.form.get('workout_description')
+    body_part = request.form.get('body_part')
+    workout_difficulty = request.form.get('workout_diffuculty')
+
 
     if request.method == 'POST':
     
         new_workout = {
-            'workout_name' : workout
+            'workout_name' : workout,
+            'workout_description' : workout_description,
+            'body_part': body_part,
+            'workout_difficulty': workout_difficulty
+    
         }
        
         result=mongo.db.workouts_data.insert_one(new_workout)

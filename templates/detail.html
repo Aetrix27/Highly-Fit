@@ -4,12 +4,17 @@
 
 
 <main>
-        <h1>Workout Name</h1>
+        <h1>Thank you for adding your workout!</h1>
+
+        <h3>Workout Added</h3>
 
         <section id="workout_name">
-            <h3>Info</h3>
-
-            {{ workout.workout_name }}
+            
+           <p>Workout Name: {{ workout.workout_name }}</p> 
+           <p>Body Part: {{ workout.body_part }}</p>
+           <p>Workout Steps {{ workout.workout_description }}</p>
+           <p>Level: {{ workout.workout_difficulty}}</p>
+           
 
         </section>
 

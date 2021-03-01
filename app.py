@@ -14,7 +14,6 @@ from bson.objectid import ObjectId
 ################################################################################
 
 
-
 app = Flask(__name__)
 
 host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/workoutdatabase') + "?retryWrites=false"

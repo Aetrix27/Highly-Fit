@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<main>
+        <h1>Workout Name</h1>
+
+        <section id="workout_name">
+            <h3>Info</h3>
+
+            {{ workout.workout_name }}
+
+        </section>
+
+        <!-- <form action="/workouts/{workout_id}" method="POST">
+            <fieldset>
+                        
+                <label>
+                    Amount harvested
+                    <input type="text" name="workout_name" placeholder="e.g. 2 tomatoes">
+                </label>
+
+            </fieldset>
+        </form> -->
+
+        <!-- <form action="/delete/123456" method='POST' id="delete-form" onsubmit="return confirm_delete()">
+            <input type="submit" class="nav" onclick="delete_modal()" value="Delete Plant">
+        </form> -->
+</main>
+{% endblock %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8 />
+    <link rel="stylesheet" type="text/css" href="./static/styles.css">
+  </head>
+  <body>
+  
+    <div style="display: flex; justify-content: space-around">
+      <div>Left Arm</div>
+      <div id = "model">3D Muscle Analysis</div>
+     <div>Right Arm</div>
+    </div>
+
+  <script type = "module">
+    import * as THREE from './static/three.js-master/build/three.module.js';
+    import { GLTFLoader } from './static/three.js-master/examples/jsm/loaders/GLTFLoader.js';
+    import {OrbitControls} from './static/three.js-master/examples/jsm/controls/OrbitControls.js';
+
+    var scene = new THREE.Scene(); 
+    var container = document.getElementById('model');
+
+    var camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 20000 );
+    camera.position.set( 0, 700, 1400 );
+    
+    var renderer = new THREE.WebGLRenderer({ alpha: false });
+    scene.background = new THREE.Color(0x000000);
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize(window.innerWidth/2, window.innerHeight/2);
+    container.appendChild(renderer.domElement);
+    
+    var controls = new OrbitControls( camera, renderer.domElement ); 
+
+    controls.minPolarAngle = Math.PI/2;
+    controls.maxPolarAngle = Math.PI/2;
+
+      
+    var ambientLight = new THREE.AmbientLight( 0xcccccc );
+    scene.add( ambientLight );
+          
+    var directionalLight = new THREE.DirectionalLight( 0xff0000 );
+    directionalLight.position.set( 0, 1, 1 ).normalize();
+    scene.add( directionalLight );			
+
+    var loader = new GLTFLoader();				
+      loader.load( './static/scene.gltf', function ( gltf ) {            
+      var object = gltf.scene;				
+      gltf.scene.scale.set( 2, 2, 2 );			   
+      gltf.scene.position.x = 0;				    //Position (x = right+ left-) 
+      gltf.scene.position.y = -300;				    //Position (y = up+, down-)
+      gltf.scene.position.z = 0;				    //Position (z = front +, back-)
+
+      scene.add( gltf.scene );
+    });	 
+
+    function animate() {
+    render();
+    requestAnimationFrame( animate );
+    }
+
+    function render() {
+    renderer.render( scene, camera );
+    }
+
+    render();
+    animate();
+  </script>
+
+  </body>
+</html>

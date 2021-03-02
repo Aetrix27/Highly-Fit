@@ -44,7 +44,6 @@ def get_workouts():
     
     return render_template('workout.html', **context) 
 
-
 @app.route('/createworkout', methods=["GET", "POST"])
 def create():
     workout = request.form.get('workout_name')

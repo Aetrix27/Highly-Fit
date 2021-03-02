@@ -11,8 +11,9 @@
     {% for workout in workouts%}
     <p>Workout Name: {{ workout.workout_name }}</p> 
     <p>Body Part: {{ workout.body_part }}</p>
-    <p>Workout Steps {{ workout.workout_description }}</p>
+    <p>Workout Steps: {{ workout.workout_description }}</p>
     <p>Level: {{ workout.workout_difficulty}}</p>
+    <a class="nav" href="/edit/{{ workout._id }}">Edit Workout</a><br><br>
     {% endfor %}
 </body>
 </html>

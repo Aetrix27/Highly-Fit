@@ -86,6 +86,10 @@ def detail(workout_id):
 def edit(workout_id):
     if request.method == "POST":
         workout = request.form.get('workout_name')
+        workout_description = request.form.get('workout_description')
+        body_part = request.form.get('body_part')
+        workout_difficulty = request.form.get('workout_difficulty')
+        
 
         mongo.db.workouts_data.update_one({
             '_id': ObjectId(workout_id),
@@ -94,7 +98,10 @@ def edit(workout_id):
         {
             '$set': {
                 '_id': ObjectId(workout_id),
-                'workout_name': workout
+                'workout_name' : workout,
+                'workout_description' : workout_description,
+                'body_part': body_part,
+                'workout_difficulty': workout_difficulty
             }
         })
 

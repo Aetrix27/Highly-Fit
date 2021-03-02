@@ -17,17 +17,7 @@
            
 
         </section>
-
-        <!-- <form action="/workouts/{workout_id}" method="POST">
-            <fieldset>
-                        
-                <label>
-                    Amount harvested
-                    <input type="text" name="workout_name" placeholder="e.g. 2 tomatoes">
-                </label>
-
-            </fieldset>
-        </form> -->
+        
         <a class="nav" href="/edit/{{ workout._id }}">Edit Workout</a><br><br>
 
         <form action="/delete/{{ workout._id }}" method='POST' id="delete-form" onsubmit="return confirm_delete()">

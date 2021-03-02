@@ -3,8 +3,8 @@
 
 
 <main>
-    <h1>Add a new workout</h1>
-
+    <h1>Edit Workout</h1>
+    <legend>Edit any info you need to for this workout:</legend>
     <form method='POST'>
         <fieldset>
             <legend>Please fill out the form below to add your new workout</legend>
@@ -36,7 +36,7 @@
 
         <fieldset>
             <label>Choose a difficulty level:</label>
-                <select id="workout_difficulty" name="workout_difficulty">
+                <select id="workout_diffuclty" name="workout_difficulty">
                 <option value="Beginner">Beginner</option>
                 <option value="Intermediate">Intermediate</option>
                 <option value="Pro">Pro</option>
@@ -44,8 +44,9 @@
         </fieldset>
         <input type="submit" class="submit" value="Submit!">
     </form>
+
+            
 </main>
 
 {% endblock content %}
     
-

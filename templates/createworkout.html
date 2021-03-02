@@ -8,8 +8,9 @@
     <form method='POST'>
         <fieldset>
             <legend>Please fill out the form below to add your new workout</legend>
-
+        <div class="card" style="width: 18rem;">
             <label>
+             <div class="card-body">
                 Workout's name:
                 <input type="text" name="workout_name">
             </label>
@@ -22,10 +23,12 @@
             </label>
             
         </fieldset>
+        </div>
 
         <fieldset>
+          <ul class="list-group list-group-flush">
             <label>Choose a body part:</label>
-                <select id="body_part" name="body_part">
+            <li class="list-group-item"><select id="body_part" name="body_part"></li>
                 <option value="arms">Arms</option>
                 <option value="legs">Legs</option>
                 <option value="abs">Abs</option>
@@ -36,13 +39,14 @@
 
         <fieldset>
             <label>Choose a difficulty level:</label>
-                <select id="workout_difficulty" name="workout_difficulty">
+            <li class="list-group-item"><select id="workout_difficulty" name="workout_difficulty"></li>
                 <option value="Beginner">Beginner</option>
                 <option value="Intermediate">Intermediate</option>
                 <option value="Pro">Pro</option>
                 </select>
         </fieldset>
         <input type="submit" class="submit" value="Submit!">
+     </ul>
     </form>
 </main>
 

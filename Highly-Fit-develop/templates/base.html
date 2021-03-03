@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    {% block content %}{% endblock %}
+    {% block content %}
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1" class="active"></li>
+            <li data-target="#demo" data-slide-to="2" class="active"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="container col-md-8 col-sm-4" id="carr" style="width: 100%;">
+            <div class="carousel-inner ">
+                <div class="carousel-item active text-center ">
+                    <img src="Images/images-6.jpeg" alt="Los Angeles " style="width:50%">
+                    <div class="carousel-caption active">
+                        <h3>Los Angeles</h3>
+                        <p>We had such a great time in LA!</p>
+                    </div>
+
+
+                </div>
+                <div class="carousel-item text-md-center">
+                    <img src="Images/images-7.jpeg" alt="Chicago" style="width:50%">
+                    <div class="carousel-caption active">
+                        <h3>Los Angeles</h3>
+                        <p>We had such a great time in LA!</p>
+                    </div>
+
+
+
+                </div>
+                <div class="carousel-item  text-md-center">
+                    <img src="Images/bach.jpg" alt="New York" style="width:50%">
+                    <div class="carousel-caption active">
+                        <h3>Los Angeles</h3>
+                        <p>We had such a great time in LA!</p>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+
+
+
+    {% endblock %}
 </body>
+
 </html>

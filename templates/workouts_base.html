@@ -8,18 +8,46 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/all_workouts.css">
 </head>
-<body>
+<body class='base-body'>
     <nav class="navbar navbar-expand ">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand nav-link " href="index.html">
           <img class= 'brand' src="static/img/logo.png" width="40" height="40" alt="" loading="lazy">The Highly Fit Club</a>
         <div class="navbar-nav">
           <a class="nav-item nav-link" href="index.html">Home</a>
         </div>
-    </nav>
+    </nav>ß
     
     {% block content %}{% endblock %}
+
+    <div class='text-center'>
+        <a href = "/model">
+            <button type="button" class="btn btn-danger btn-lg mr-3 button-text">Back to Model</a></button>
+        <a href = "/createworkout">
+            <button type="button" class="btn btn-danger btn-lg ml-3 button-text">Add a workout</a></button>
+    </div>
+  
+    
+    
   
     
 </body>
+<footer class='index-footer mt-5'>
+    <div class="row justify-content-md-center">
+        <p>CONTACT US:</p>
+      <div class="col-2">
+  
+        <h4>##########@Gmail.com</h4>
+        <p> Phone: ###-###-####</p>
+      </div>
+        <div class="col-2 mt-4 images">
+        <a href="https://m.facebook.com/">
+          <img src="static/img/facebook.jpg" style="width:42px;height:40px;"></a>
+  
+        <a href="https://www.instagram.com/">
+          <img src="static/img/instagram.jpg" style="width:60px;height:40px;"></a>
+  
+        </div>
+    </div>  
+  </footer>
     
 </html>

@@ -7,12 +7,38 @@
 
 }
 
+/* abs-workout page */
+.abs-display{
+    background-color:black;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+}
+.all-abs{
+    background-color: black;
+    color: rgb(240, 83, 83);
+    font-size: 20px;
+    font-family:initial
+}
+
 
 /* workouts base style */
 .navbar{
-    background-color: black;
-    color: rosybrown;
+    background-color: whitesmoke;
+    color: rgb(240, 83, 83);
 }
-a{
-    color: rosybrown;
+.nav-link{
+    color: rgb(240, 83, 83);
+}
+.base-body{
+background-color: black;
+}
+.index-footer{
+    color: white;
+}
+.button-text{
+    color: white;
+}
+.workout-header{
+    color:rgb(240, 83, 83) ;
 }

@@ -48,6 +48,11 @@ body{
 .footer{
     background-color:black;
 }
+.model-info{
+  color: white;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
 
 .btn{
   background-color: grey;
@@ -55,6 +60,17 @@ body{
 .index-footer{
   background-color: black;
 }
+.model-text{
+  color: white;
+}
+.navbar-model{
+  background-color: whitesmoke;
+  color: rgb(240, 83, 83);
+}
+.nav-link-model{
+  color: rgb(240, 83, 83);
+}
+
 
 
 

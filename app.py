@@ -111,7 +111,7 @@ def chest_workouts():
 def arm_workouts():
 
     arm_workouts = mongo.db.workouts_data.find({
-        'body_part' : 'arm'
+        'body_part' : 'arms'
     })
     context = {
         'workouts': arm_workouts

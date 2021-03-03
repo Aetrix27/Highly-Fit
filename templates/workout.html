@@ -24,6 +24,9 @@
         <p>Level: {{ workout.workout_difficulty}}</p>
         <a class="nav" href="/edit/{{ workout._id }}">Edit Workout</a><br><br>
     </div>
+    <form action="/delete/{{ workout._id }}" method='POST' id="delete-form" onsubmit="return confirm_delete()">
+        <input type="submit" class="nav" onclick="delete_modal()" value="Delete Workout">
+    </form>
     
     {% endfor %}
     </div>

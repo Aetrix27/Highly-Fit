@@ -1,41 +1,59 @@
 {% extends 'base.html' %}
 {% block content %}
+<head>  
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald"> -->
+    <!-- <link rel="stylesheet" href="static/css/Raleway.css">
 
+    <link rel="stylesheet" href="static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/Features-Blue.css">
+    <link rel="stylesheet" href="static/css/SmartNavClean.css"> -->
+    <link rel="stylesheet" href="static/css/createworkout.css">
+    <!-- <link rel="stylesheet" href="static/css/untitled.css"> -->
+</head>
 
 <main>
-    <h1>Add a new workout</h1>
+    
+    <h1 class='adding-work'>Add a new workout</h1>
 
     <form method='POST'>
         <fieldset>
             <legend>Please fill out the form below to add your new workout</legend>
         <div class="card" style="width: 18rem;">
-            <label>
-             <div class="card-body">
-                Workout's name:
-                <input type="text" name="workout_name">
-            </label>
-        </fieldset>
+                <label>
+         <div class="card-body">
+                    Workout's name:
+                    <input type="text" name="workout_name">
+                </label>
+            </fieldset>
 
-        <fieldset>
-            <label>
-            Workout Description:
-                <input type="text" name="workout_description">
-            </label>
-            
-        </fieldset>
+            <fieldset>
+                <label>
+                Workout Description:
+                    <input type="text" name="workout_description">
+                </label>
+                
+            </fieldset>
+            <fieldset>
+                <ul class="list-group list-group-flush">
+                <label>Choose a body part:</label>
+                <li class="list-group-item"><select id="body_part" name="body_part"></li>
+                    <option value="arms">Arms</option>
+                    <option value="legs">Legs</option>
+                    <option value="abs">Abs</option>
+                    <option value="chest">Chest</option>
+                    <option value="back">Back</option>
+                    </select>
+          </fieldset>
+        
+         </div>
         </div>
-
-        <fieldset>
-          <ul class="list-group list-group-flush">
-            <label>Choose a body part:</label>
-            <li class="list-group-item"><select id="body_part" name="body_part"></li>
-                <option value="arms">Arms</option>
-                <option value="legs">Legs</option>
-                <option value="abs">Abs</option>
-                <option value="chest">Chest</option>
-                <option value="back">Back</option>
-                </select>
-        </fieldset>
 
         <fieldset>
             <label>Choose a difficulty level:</label>

@@ -1,0 +1,18 @@
+/* all workouts page */
+.workout-display{
+    background-color: rosybrown;
+    color: red;
+    font-size: 20px;
+    font-family: sans-serif;
+
+}
+
+
+/* workouts base style */
+.navbar{
+    background-color: black;
+    color: rosybrown;
+}
+a{
+    color: rosybrown;
+}

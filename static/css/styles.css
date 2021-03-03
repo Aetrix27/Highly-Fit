@@ -52,3 +52,13 @@ body{
 .btn{
   background-color: grey;
 }
+
+.add-workout{
+  color: red;
+}
+
+/* createworkout html */
+
+.adding-work{
+  color: yellow;
+}

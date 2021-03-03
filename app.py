@@ -81,7 +81,7 @@ def back_workouts():
 def abs_workouts():
 
     abs_workouts = mongo.db.workouts_data.find({
-        'workouts' : 'abs'
+        'body_part' : 'abs'
     })
     context = {
         'workouts': abs_workouts
@@ -96,7 +96,7 @@ def abs_workouts():
 def chest_workouts():
 
     chest_workouts = mongo.db.workouts_data.find({
-        'workouts' : 'chest'
+        'body_part' : 'chest'
     })
     context = {
         'workouts': chest_workouts
@@ -111,7 +111,7 @@ def chest_workouts():
 def arm_workouts():
 
     arm_workouts = mongo.db.workouts_data.find({
-        'workouts' : 'arm'
+        'body_part' : 'arm'
     })
     context = {
         'workouts': arm_workouts

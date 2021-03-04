@@ -3,14 +3,21 @@
   <head>
     <meta charset=UTF-8 />
     <link rel="stylesheet" type="text/css" href="./static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
   </head>
-  <body>
+  <body style = "background-color:black;">
+      
+    <div class = "row align-items-center text-center model-display">
+      <h2 class="align-text-center model-text text-light">3D Model</h2>
+      <p class='text-light'>Welcome to our model page where you can click and drag and move the model around. Take a look at the different body parts and 
+        then you can decide which muscle you want to workout to then be able to see all workouts for that muscle that users have added themselves. </p>
+    </div>
   
     <div style="display: flex; justify-content: space-around">
-      <div>Left Arm</div>
-      <div id = "model">3D Muscle Analysis</div>
-     <div>Right Arm</div>
+      <div id = "model"></div>
     </div>
+   
 
   <script type = "module">
     import * as THREE from './static/three.js-master/build/three.module.js';
@@ -65,6 +72,17 @@
     render();
     animate();
   </script>
-
+  <div class='text-center'>
+    <a href = "/arm_workouts">
+        <button type="button" class="btn btn-danger btn-lg mr-3 button-text">Arms</a></button>
+    <a href = "/leg_workouts">
+        <button type="button" class="btn btn-danger btn-lg mr-3 button-text">Legs</a></button>
+    <a href = "/abs_workouts">
+        <button type="button" class="btn btn-danger btn-lg ml-3 button-text">Abs</a></button>
+    <a href = "/back_workouts">
+        <button type="button" class="btn btn-danger btn-lg mr-3 button-text">Back</a></button>
+    <a href = "/workouts">
+        <button type="button" class="btn btn-danger btn-lg ml-3 button-text">Add a workout</a></button>
+</div>
   </body>
 </html>

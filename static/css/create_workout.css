@@ -1,0 +1,17 @@
+#create_workout{
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+fieldset{
+      align-items: center;
+  }
+
+
+#field-1{
+    padding-bottom: 20px;
+}
+
+#footer-createworkout{
+    background-color: white;
+    color: black;
+}

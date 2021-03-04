@@ -4,28 +4,26 @@
 
 
 <main>
-        <h1>Workout Name</h1>
+        <h1>Thank you for adding your workout!</h1>
+
+        <h3>Workout Added</h3>
 
         <section id="workout_name">
-            <h3>Info</h3>
-
-            {{ workout.workout_name }}
+            
+           <p>Workout Name: {{ workout.workout_name }}</p> 
+           <p>Body Part: {{ workout.body_part }}</p>
+           <p>Workout Steps {{ workout.workout_description }}</p>
+           <p>Level: {{ workout.workout_difficulty}}</p>
+           
 
         </section>
 
-        <!-- <form action="/workouts/{workout_id}" method="POST">
-            <fieldset>
-                        
-                <label>
-                    Amount harvested
-                    <input type="text" name="workout_name" placeholder="e.g. 2 tomatoes">
-                </label>
+        <a class="nav" href="/model">Click here to workout</a><br><br>
+        
+        <a class="nav" href="/edit/{{ workout._id }}">Edit Workout</a><br><br>
 
-            </fieldset>
-        </form> -->
-
-        <!-- <form action="/delete/123456" method='POST' id="delete-form" onsubmit="return confirm_delete()">
-            <input type="submit" class="nav" onclick="delete_modal()" value="Delete Plant">
-        </form> -->
+        <form action="/delete/{{ workout._id }}" method='POST' id="delete-form" onsubmit="return confirm_delete()">
+            <input type="submit" class="nav" onclick="delete_modal()" value="Delete Workout">
+        </form>
 </main>
 {% endblock %}

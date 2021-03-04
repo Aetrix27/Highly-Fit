@@ -1,0 +1,44 @@
+/* all workouts page */
+.workout-display{
+    background-color: gray;
+    color: darkred;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+/* abs-workout page */
+.abs-display{
+    background-color:black;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+}
+.all-abs{
+    background-color: black;
+    color: rgb(240, 83, 83);
+    font-size: 20px;
+    font-family:initial
+}
+
+
+/* workouts base style */
+.navbar{
+    background-color: whitesmoke;
+    color: rgb(240, 83, 83);
+}
+.nav-link{
+    color: rgb(240, 83, 83);
+}
+.base-body{
+background-color: black;
+}
+.index-footer{
+    color: white;
+}
+.button-text{
+    color: white;
+}
+.workout-header{
+    color:rgb(240, 83, 83) ;
+}

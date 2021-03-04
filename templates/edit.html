@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<main>
+    <h1>Edit Workout</h1>
+    <legend>Edit any info you need to for this workout:</legend>
+    <form method='POST'>
+        <fieldset>
+            <legend>Please fill out the form below to add your new workout</legend>
+
+            <label>
+                Workout's name:
+                <input type="text" name="workout_name">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <label>
+            Workout Description:
+                <input type="text" name="workout_description">
+            </label>
+            
+        </fieldset>
+
+        <fieldset>
+            <label>Choose a body part:</label>
+                <select id="body_part" name="body_part">
+                <option value="arms">Arms</option>
+                <option value="legs">Legs</option>
+                <option value="abs">Abs</option>
+                <option value="chest">Chest</option>
+                <option value="back">Back</option>
+                </select>
+        </fieldset>
+
+        <fieldset>
+            <label>Choose a difficulty level:</label>
+                <select id="workout_diffuclty" name="workout_difficulty">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Pro">Pro</option>
+                </select>
+        </fieldset>
+        <input type="submit" class="submit" value="Submit!">
+    </form>
+
+            
+</main>
+
+{% endblock content %}
+    

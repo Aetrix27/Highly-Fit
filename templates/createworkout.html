@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<link rel="stylesheet" href="static/css/SmartNavClean.css">
-<link rel="stylesheet" href="static/css/create_workout.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/SmartNavClean.css">
+    <link rel="stylesheet" href="static/css/create_workout.css">
 </head>
 
 <body id="create_workout">
 
-    <h1 id="header-1" style="text-align: center;">Add a new workout</h1>
+    <h1 id="header-1" style="text-align: center;">Add a New Workout</h1>
 
     <form  class="text-center" id="form-create-workout" method='POST'>
         <fieldset id="field-1">
@@ -19,7 +20,7 @@
                 <div class="card card-workout" style="width: 25rem;">
                 <input type="text" name="workout_name">
             </label>
-        </div>
+            </div>
         </fieldset>
 
         <fieldset id="field-1">
@@ -48,7 +49,7 @@
 
         <fieldset id="field-1">
             <label>Choose a difficulty level:
-                <ul class="list-group card-field-1 list-group-flush">
+        <ul class="list-group card-field-1 list-group-flush">
             </label>
             <div class="card card-workout" style="width: 25rem;">
             <li class="list-group-item"><select id="workout_difficulty" name="workout_difficulty"></li>
@@ -58,7 +59,7 @@
                 </select>
              </div>
         </fieldset>
-     </ul>
+        </ul>
      <input type="submit" class="submit" value="Submit!">
      <a href = "/model">
         <button type="submit" class="submit">Continue Working out!</a></button>

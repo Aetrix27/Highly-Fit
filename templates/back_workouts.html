@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends 'workouts_base.html' %}
+{% block content %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -6,28 +8,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
-    <div class = "row align-items-center text-center abs-display">
+
+    <div class = "row align-items-center text-center body-part-text-display">
         <h2 class="align-text-center workout-header">Back</h2>
         <div class= 'col-6'>
             <p>These muscles are able to move the upper limb as they originate at the vertebral column and insert onto either the clavicle, scapula or humerus.
             </p>
         </div>
         <div class="col-6">
-            <img src="" class="img-fluid solid-image, mb-5" alt="Responsive image">
+            <img src="static/img/back.jpeg" class="img-fluid solid-image, mb-5 mr-5" alt="Responsive image">
         </div>   
     </div>
     <main>
         <div class='row mt-5 all-abs'>
             {% for workout in workouts%}
-            <div class='col-3 '>
-                <p>Workout Name: {{ workout.workout_name }}</p> 
-                <p>Body Part: {{  workout.body_part }}</p>
-                <p>Workout Steps: {{ workout.workout_description }}</p>
-                <p>Level: {{ workout.workout_difficulty}}</p>
-                <!-- <a class="nav" href="/edit/{{ workout._id }}">Edit Workout</a><br><br> -->
-            </div>
+                <div class='col-3 '>
+                    <p>Workout Name: {{ workout.workout_name }}</p> 
+                    <p>Body Part: {{  workout.body_part }}</p>
+                    <p>Workout Steps: {{ workout.workout_description }}</p>
+                    <p>Level: {{ workout.workout_difficulty}}</p>
+                    <!-- <a class="nav" href="/edit/{{ workout._id }}">Edit Workout</a><br><br> -->
+                </div>
             
             {% endfor %}
             </div>
     
     </main>
+
+{% endblock %}

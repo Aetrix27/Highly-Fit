@@ -7,14 +7,19 @@ from pprint import PrettyPrinter
 from flask import Flask, request, render_template, redirect, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from dotenv import load_dotenv
+
+load_dotenv()
 
 ################################################################################
 ## SETUP
 ################################################################################
 
 app = Flask(__name__)
+secret=os.getenv('VAR')
 
-host = os.environ.get('MONGODB_URI', 'mongodb+srv://david-323:NJNvBiMmIpvHwa4S@cluster0.dwme2.mongodb.net/workoutdatabase') + "?retryWrites=false"
+#Attempted to upload to Heroku using secret, if line doesnt work use host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/workoutdatabase') + "?retryWrites=false"
+host = os.environ.get('MONGODB_URI', secret) + "?retryWrites=false"
 app.config["MONGO_URI"] = host
 mongo = PyMongo(app)
 

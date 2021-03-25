@@ -14,7 +14,7 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/workoutdatabase') + "?retryWrites=false"
+host = os.environ.get('MONGODB_URI', 'mongodb+srv://david-323:NJNvBiMmIpvHwa4S@cluster0.dwme2.mongodb.net/workoutdatabase') + "?retryWrites=false"
 app.config["MONGO_URI"] = host
 mongo = PyMongo(app)
 

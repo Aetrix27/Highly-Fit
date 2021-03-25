@@ -18,11 +18,12 @@
     <div class='row workout-display'>
     {% for workout in workouts%}
     <div class='col-4 workout-display'>
-        <p>Workout Name: {{ workout.workout_name }}</p> 
+        <a class="nav" href="/workout/{{ workout._id }}">Workout Name: {{ workout.workout_name }}</a><br><br>
         <p>Body Part: {{  workout.body_part }}</p>
         <p>Workout Steps: {{ workout.workout_description }}</p>
         <p>Level: {{ workout.workout_difficulty}}</p>
         <a class="nav" href="/edit/{{ workout._id }}">Edit Workout</a><br><br>
+  
     </div>
     <form action="/delete/{{ workout._id }}" method='POST' id="delete-form" onsubmit="return confirm_delete()">
         <input type="submit" class="nav" onclick="delete_modal()" value="Delete Workout">

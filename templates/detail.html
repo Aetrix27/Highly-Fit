@@ -1,14 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-
 <main>
-        <h1>Thank you for adding your workout!</h1>
+        <h3>Workout Info</h3>
 
-        <h3>Workout Added</h3>
-
-        <section id="workout_name">
+        <section id="workout_name" class="text-center">
             
            <p>Workout Name: {{ workout.workout_name }}</p> 
            <p>Body Part: {{ workout.body_part }}</p>
